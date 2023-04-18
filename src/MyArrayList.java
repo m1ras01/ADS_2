@@ -29,7 +29,12 @@ public class MyArrayList<E>{
                  arr[i-1]=arr[i];
              }
              size--;
+
          }
      }
+     public int Size(){
+        return size;
+     }
+
 
 }
