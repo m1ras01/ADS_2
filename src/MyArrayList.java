@@ -19,21 +19,23 @@ public class MyArrayList<E>{
          }
      }
      public E getElement(int index){
-         if(index<0 || index>=size) throw new IndexOutOfBoundsException();
-         else return (E) arr[index];
+         checkIndex(index);
+         return (E) arr[index];
      }
      public void remove(int index){
-         if(index<0 || index>=size) throw new IndexOutOfBoundsException();
-         else{
-             for (int i = index+1;i<size;i++){
+         checkIndex(index);
+         for (int i = index+1;i<size;i++){
                  arr[i-1]=arr[i];
              }
              size--;
 
-         }
+
      }
      public int Size(){
         return size;
+     }
+     public void checkIndex(int index){
+         if(index<0 || index>=size) throw new IndexOutOfBoundsException();
      }
 
 
