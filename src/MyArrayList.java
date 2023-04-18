@@ -23,6 +23,13 @@ public class MyArrayList<E>{
          else return (E) arr[index];
      }
      public E remove(int index){
-
+         if(index<0 || index>=size) throw new IndexOutOfBoundsException();
+         else{
+             for (int i = index+1;i<size;i++){
+                 arr[i-1]=arr[i];
+             }
+             size--;
+         }
      }
+
 }
