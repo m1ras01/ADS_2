@@ -22,7 +22,7 @@ public class MyArrayList<E>{
          if(index<0 || index>=size) throw new IndexOutOfBoundsException();
          else return (E) arr[index];
      }
-     public E remove(int index){
+     public void remove(int index){
          if(index<0 || index>=size) throw new IndexOutOfBoundsException();
          else{
              for (int i = index+1;i<size;i++){
