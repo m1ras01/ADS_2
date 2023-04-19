@@ -81,5 +81,25 @@ public class MyArrayList<E>{
          Object[] newArr = new Object[size];
          arr = newArr;
     }
+    public int indexOf(Object o) {
+        if (o == null) {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] == null) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = 0; i < arr.length; i++) {
+                if (Objects.equals(o, arr[i])) {
+                    return i;
+                }
+            }
+
+        }
+        return -1;
+    }
+    //public int lastIndexOf(Object o){
+
+
 
 }
