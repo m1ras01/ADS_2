@@ -6,6 +6,7 @@ public class Main {
         for (int i = 0 ; i < 9;i++){
             list.add(s.nextInt());
         }
-        System.out.println(list.indexOf(2));
+
+        System.out.println(list.lastIndexOf(9));
     }
 }
