@@ -19,7 +19,7 @@ public class MyArrayList<E>{
          }
      }
      public E getElement(int index){
-         checkIndex(index);
+        checkIndex(index);
          return (E) arr[index];
      }
      public void remove(int index){
@@ -35,7 +35,7 @@ public class MyArrayList<E>{
         return size;
      }
      public void checkIndex(int index){
-         if(index<0 || index>=size) throw new IndexOutOfBoundsException();
+         if(index<0 || index>=arr.length) throw new IndexOutOfBoundsException();
      }
      public boolean contains(Object o){
          if(o== null){
@@ -54,6 +54,20 @@ public class MyArrayList<E>{
              }
          }
          return false;
+     }
+     public void add(E item,int index) {
+         if (index >= size) {
+             Object[] newArr = new Object[arr.length*2];
+             for(int i = 0 ; i < arr.length;i++){
+                 newArr[i] = arr[i];
+             }
+             arr = newArr;
+             arr[index] = item;
+         }
+         else {
+             arr[index] = item;
+             size++;
+         }
      }
 
 

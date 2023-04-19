@@ -4,10 +4,9 @@ public class Main {
         for (int i = 1 ; i < 9;i++){
             list.add(i);
         }
-        System.out.println(list.getElement(1));
-        for (int i = 0 ; i < 4;i++){
-            System.out.println(list.getElement(i));
-        }
-        System.out.println(list.contains(null));
+
+        list.add(9);
+        System.out.println(list.getElement(10));
+
     }
 }
