@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class MyArrayList<E>{
      private Object[] arr;
      private int size=0;
@@ -7,16 +9,13 @@ public class MyArrayList<E>{
      }
      public void add(E element){
          if(size == arr.length){
-             Object[] newArr = new Object[arr.length*2];
+             E[] newArr = (E[])new Object[arr.length*2];
              for(int i = 0 ; i < arr.length;i++){
-                 newArr[i] = arr[i];
+                 newArr[i] = (E) arr[i];
              }
              arr = newArr;
          }
-         else{
-             arr[size] = element;
-             size++;
-         }
+             arr[size++] = element;
      }
      public E getElement(int index){
         checkIndex(index);
@@ -28,8 +27,6 @@ public class MyArrayList<E>{
                  arr[i-1]=arr[i];
              }
              size--;
-
-
      }
      public int Size(){
         return size;
@@ -57,7 +54,7 @@ public class MyArrayList<E>{
      }
      public void add(E item,int index) {
          if (index >= size) {
-             Object[] newArr = new Object[arr.length*2];
+             Object[] newArr = new Object[arr.length*20];
              for(int i = 0 ; i < arr.length;i++){
                  newArr[i] = arr[i];
              }
@@ -70,5 +67,19 @@ public class MyArrayList<E>{
          }
      }
 
+     public boolean removeAndChecker(E item){
+         for (int i = 0;i<=size;i++){
+             if(Objects.equals(item,arr[i])){
+                 remove(i);
+                 return true;
+             }
+         }
+         return false;
+     }
+    public void clear(){
+         size=0;
+         Object[] newArr = new Object[size];
+         arr = newArr;
+    }
 
 }
