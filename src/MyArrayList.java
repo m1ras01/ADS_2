@@ -37,7 +37,24 @@ public class MyArrayList<E>{
      public void checkIndex(int index){
          if(index<0 || index>=size) throw new IndexOutOfBoundsException();
      }
+     public boolean contains(Object o){
+         if(o== null){
+             for (int i = 0 ; i < size; i ++){
+                 if(arr[i] == null){
+                     return true;
+                 }
+             }
+         }
+         else{
+             for (int i = 0 ; i < size;i++){
+                 if(o.equals(arr[i])){
+                     return true;
+                 }
 
+             }
+         }
+         return false;
+     }
 
 
 }

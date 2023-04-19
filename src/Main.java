@@ -5,8 +5,9 @@ public class Main {
             list.add(i);
         }
         System.out.println(list.getElement(1));
-        for (int i = 0 ; i < 9;i++){
+        for (int i = 0 ; i < 4;i++){
             System.out.println(list.getElement(i));
         }
+        System.out.println(list.contains(null));
     }
 }
