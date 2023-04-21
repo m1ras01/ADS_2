@@ -97,4 +97,17 @@ public class MyLinkedList<E> {
         size = 0;
     }
 
+    public int indexOf(Object o) {
+        Node current = head;
+        int index = 0;
+        while (current != null) {
+            if (current.element.equals(o)) {
+                return index;
+            }
+            current = current.next;
+            index++;
+        }
+        return -1;
+    }
+
 }
