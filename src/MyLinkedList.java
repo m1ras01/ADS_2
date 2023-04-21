@@ -9,4 +9,13 @@ public class MyLinkedList<E> {
            this.prev = null;
         }
     }
+    private Node head;
+    private Node tail;
+    private int size;
+    MyLinkedList(){
+      head = null;
+      tail = null;
+      size = 0;
+    }
+
 }
