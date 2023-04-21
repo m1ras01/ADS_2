@@ -89,4 +89,8 @@ public class MyLinkedList<E> {
 
         size--;
     }
+    public int size() {
+        return size;
+    }
+
 }
