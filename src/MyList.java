@@ -7,6 +7,6 @@ public interface MyList<E> {
     int size();
     void clear();
     int indexOf(Object o);
-
+    int lastIndexOf(Object o);
 
 }
