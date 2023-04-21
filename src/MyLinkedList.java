@@ -92,5 +92,9 @@ public class MyLinkedList<E> {
     public int size() {
         return size;
     }
+    public void clear() {
+        head = null;
+        size = 0;
+    }
 
 }
