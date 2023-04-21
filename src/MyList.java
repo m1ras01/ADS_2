@@ -5,7 +5,7 @@ public interface MyList<E> {
     E get(int index);
     void remove(int index);
     int size();
-
+    void clear();
 
 
 
