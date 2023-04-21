@@ -17,5 +17,18 @@ public class MyLinkedList<E> {
       tail = null;
       size = 0;
     }
+    public void add(E element) {
+        Node newNode = new Node(element);
 
+        if (size == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.prev = tail;
+            tail.next = newNode;
+            tail = newNode;
+        }
+
+        size++;
+    }
 }
