@@ -109,5 +109,18 @@ public class MyLinkedList<E> {
         }
         return -1;
     }
+    public int lastIndexOf(Object o) {
+        Node current = head;
+        int index = -1;
+        int i = 0;
+        while (current != null) {
+            if (current.element.equals(o)) {
+                index = i;
+            }
+            current = current.next;
+            i++;
+        }
+        return index;
+    }
 
 }
