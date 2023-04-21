@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class MyArrayList<E> {
+public class MyArrayList<E> implements MyList<E>{
     private Object[] arr;
     private int size = 0;
 
@@ -20,6 +20,11 @@ public class MyArrayList<E> {
         arr[size++] = element;
     }
 
+    @Override
+    public E get(int index) {
+        return null;
+    }
+
     public E getElement(int index) {
         checkIndex(index);
         return (E) arr[index];
@@ -31,6 +36,11 @@ public class MyArrayList<E> {
             arr[i - 1] = arr[i];
         }
         size--;
+    }
+
+    @Override
+    public int size() {
+        return 0;
     }
 
     public int Size() {

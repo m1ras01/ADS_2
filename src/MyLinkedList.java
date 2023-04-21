@@ -1,4 +1,4 @@
-public class MyLinkedList<E> {
+public class MyLinkedList<E> implements MyList<E> {
     private class Node {
         private E element;
         private Node next;
@@ -121,6 +121,11 @@ public class MyLinkedList<E> {
             i++;
         }
         return index;
+    }
+
+    @Override
+    public void sort() {
+
     }
 
 }
