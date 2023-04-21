@@ -8,5 +8,5 @@ public interface MyList<E> {
     void clear();
     int indexOf(Object o);
     int lastIndexOf(Object o);
-
+    void sort();
 }
