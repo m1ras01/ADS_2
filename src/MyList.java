@@ -6,7 +6,7 @@ public interface MyList<E> {
     void remove(int index);
     int size();
     void clear();
-
+    int indexOf(Object o);
 
 
 }
