@@ -52,5 +52,41 @@ public class MyLinkedList<E> {
 
         return currentNode.element;
     }
+    public void remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
 
+        Node currentNode;
+        if (index == 0) {
+            currentNode = head;
+            head = head.next;
+            if (head != null) {
+                head.prev = null;
+            } else {
+                tail = null;
+            }
+        } else if (index == size-1) {
+            currentNode = tail;
+            tail = tail.prev;
+            tail.next = null;
+        } else {
+            if (index < size/2) {
+                currentNode = head;
+                for (int i = 0; i < index; i++) {
+                    currentNode = currentNode.next;
+                }
+            } else {
+                currentNode = tail;
+                for (int i = size-1; i > index; i--) {
+                    currentNode = currentNode.prev;
+                }
+            }
+
+            currentNode.prev.next = currentNode.next;
+            currentNode.next.prev = currentNode.prev;
+        }
+
+        size--;
+    }
 }
