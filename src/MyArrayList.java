@@ -123,6 +123,24 @@ public class MyArrayList<E> {
         }
         return -1;
     }
+    public void sort(){
+        for(int i = 0; i < arr.length   ; i++) {
+            int min = i;
+            for(int j = i + 1; j < arr.length; j++) {
+                if (arr[min] != null && arr[j] != null){
+                if((Integer)arr[min] > (Integer)arr[j]) {
+                    min = j;
+                }
+                }
+            }
+
+            Object temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+        }
+    }
+
+
 }
 
 
