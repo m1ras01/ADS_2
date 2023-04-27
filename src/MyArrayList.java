@@ -19,14 +19,53 @@ public class MyArrayList<E> implements MyList<E>{
         }
         arr[size++] = element;
     }
+    public void addAll(int[] ar,int index){
+        Object[] NewArr = new Object[arr.length*20];
+        for (int i = 0; i < arr.length; i++) {
+            NewArr[i] = (E) arr[i];
+        }
+        arr = NewArr;
 
-    @Override
+        for(int i = index;i<ar.length;i++ ){
+           for(int k = 0 ; i < ar.length;i++) {
+               for (int j = index + ar.length; j <= arr.length + ar.length; i++) {
+                   arr[j] = arr[i];
+                   arr[i] = ar[k];
+               }
+           }
+        }
+    }
+    public void sort(int a, int b) {
+        int n = b - a;
+
+        Object[] arr2 = new Object[n];
+
+            for (int i = a; i < b; i++) {
+                arr2[i-n] = arr[i];
+            }
+        for (int i = 0; i < arr2.length; i++) {
+            int min = i;
+            for (int j = i + 1; j < arr2.length; j++) {
+                if (arr2[min] != null && arr2[j] != null) {
+                    if ((Integer) arr2[min] > (Integer) arr2[j]) {
+                        min = j;
+                    }
+                }
+            }
+
+            Object temp = arr2[i];
+            arr2[i] = arr2[min];
+            arr2[min] = temp;
+        }
+
+    }
+     @Override
     public E get(int index) {
         return null;
     }
 
     public E getElement(int index) {
-        checkIndex(index);
+        // checkIndex(index);
         return (E) arr[index];
     }
 
